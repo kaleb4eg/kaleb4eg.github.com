@@ -36,3 +36,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - feed.xml
+
+theme: jekyll-theme-slate

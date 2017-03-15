@@ -1801,8 +1801,7 @@ meth_three
 ## Blocks
 
 > A block is code that is passed to a method by using of either curly braces, `{...}`, or do...end syntax.
-It's common convention to use `{...}` for single line blocks, and `do...end` for multi-line blocks,
-but curly braces have higher precedence.
+It's common convention to use `{...}` for single line blocks, and `do...end` for multi-line blocks.
 
 --
 
@@ -1819,12 +1818,7 @@ pair.
 
 3. Block hasn't access to method local variables but we can pass them to block. And They can be changed inside block.
 
-4. If method local variable has te same name as block local variable then method local variable is not availaba inside
-block.
-
-5. Arguments number is important for method and not important for block.
-
-6. if you want to pass as method argument you must use braces otherwise it is treated as block and rises an error.
+4. if you want to pass as method argument you must use braces otherwise it is treated as block and rises an error.
 
 --
 
@@ -1865,28 +1859,6 @@ try { 'hello' }
 
 try do 'hello' end
 # => "hello"
-```
-
---
-
-## Closures
-
-```ruby
-def thrice
-  yield
-  yield
-  yield
-end
-
-x = 5
-
-puts "value of x before: #{x}"
-# => "value of x before: 5"
-
-thrice { x += 1 }
-
-puts "value of x after: #{x}"
-# => "value of x after: 8"
 ```
 
 --
@@ -1953,7 +1925,7 @@ square.call(4)
 
 --
 
-## Anonymous
+## Anonymous functions
 
 ```ruby
 bo = lambda do |param|
@@ -1996,7 +1968,7 @@ args(lambda{ |a, b, c| puts "Give me a #{a} and b #{b} and c #{c}"})
 
 ## Proc vs lambda
 
-> Lambdas have lesser returns
+> Lambdas return values
 
 ```ruby
 def proc_return
@@ -2024,24 +1996,6 @@ lambda_return
 
 - `blocks` and `Procs` act like code snippets
 - `lambdas` and `Methods` act like methods
-
---
-
-## Method to object
-
-```ruby
-def square(n)
-  n ** 2
-end
-
-square_obj = method(:square)
-
-square_obj.class
-# => Method
-
-square_obj.call(4)
-# => 16
-```
 
 --
 
@@ -2099,41 +2053,6 @@ num * 2
 
 num.*(2)
 # => 24
-```
-
----
-
-# Ruby Koans
-
---
-
-## Ruby Koans Online
-
-The [Ruby Koans](http://rubykoans.com/) are a great way to learn about the Ruby language.
-
-```bash
-$ git clone git://github.com/edgecase/ruby_koans.git ruby_koans
-$ cd ruby_koans
-```
-
-```bash
-$ rake gen
-$ mkdir -p koans
-$ cp src/edgecase.rb koans/edgecase.rb
-$ cp README.rdoc koans/README.rdoc
-```
-
-```bash
-$ rake
-
-The Master says:
-You have not yet reached enlightenment.
-The answers you seek...
-Failed assertion, no message given.
-Please meditate on the following code:
-/Users/sparrow/Www/ruby_koans/koans/about_asserts.rb:10:in 'test_assert_truth'
-mountains are merely mountains
-your path thus far [X_________________________________________________] 0/280
 ```
 
 ---

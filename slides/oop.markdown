@@ -153,7 +153,7 @@ class BookInStock
   end
 
   def price_in_cents
-    Integer(@price * 100 + 0.5)
+    Integer(@price * 100)
   end
 
   def price_in_cents=(value)
@@ -647,9 +647,8 @@ B::NUM     # => 3
 
 ---
 
-## Class hierarchy
+# The End
 
-![](/assets/images/class-hierarchy.dot.svg)
 
 ---
 
